@@ -1,0 +1,296 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+:root {
+  --white: #eee;
+  --black: #111;
+  --primary-text: var(--black);
+  --inverted-text: var(--white);
+  --primary-bg: #7ec9f8;
+  --dark-of-primary-bg: #0f26a6;
+  --logo-bg: #6a1404;
+  --logo-fg: #fac51b;
+  --grey: #555;
+  --box-shadow: 0 0 4px var(--black);
+}
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  color: var(--primary-text);
+  font-size: 16px;
+}
+
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+  5. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+  6. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/*
+  7. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/*
+  8. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.wrapper {
+  background-image: radial-gradient(var(--primary-bg), var(--white));
+  background-color: var(--primary-bg);
+  height: 100dvh;
+  width: 100dvw;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.header {
+  background-color: var(--primary-bg);
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 5px 25px;
+  box-shadow: var(--box-shadow);
+  justify-content: space-between;
+
+  img {
+    height: 13dvh;
+    object-fit: contain;
+    transition: 100ms;
+
+    &:hover {
+      transition: 300ms;
+      transform: scale(1.1);
+    }
+  }
+
+  .link-div {
+    flex-wrap: wrap;
+    display: flex;
+    gap: 10px;
+
+    a {
+      display: inline-block;
+      width: fit-content;
+      padding: 5px 15px;
+      background-color: rgba(0, 0, 0, 0.1);
+      border-radius: 20px;
+      align-items: center;
+      text-transform: uppercase;
+      border: solid 2px var(--primary-text);
+      margin: 0 auto;
+      transition: 100ms;
+
+      &.active {
+        color: var(--logo-bg);
+        background-color: var(--logo-fg);
+        border-color: var(--logo-bg);
+      }
+
+      &:hover {
+        transition: 300ms;
+        transform: scale(1.05);
+      }
+
+      &:hover:not(.active) {
+        background-color: var(--white);
+        color: inherit;
+        border-color: var(--primary-text);
+      }
+    }
+  }
+}
+
+.main-div {
+  padding: 40px 30px;
+}
+
+.search-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+  max-width: 700px;
+  margin: 0 auto;
+  gap: 10px;
+
+  .search-container {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    align-items: end;
+
+    .search-btn {
+      background-color: rgba(0, 0, 0, 0.1);
+      border: solid 2px var(--white);
+      border-radius: 10px;
+      padding: 2px;
+      height: 37.2px;
+      width: 37.2px;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+
+      img {
+        height: 20px;
+      }
+
+      &:hover {
+        border-color: var(--black);
+        transition: 300ms;
+      }
+    }
+  }
+
+  .or-span {
+    display: grid;
+    place-items: center;
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 25px;
+  }
+
+  .search-with-camera {
+    width: 290px;
+    padding: 5px 10px;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border: none;
+    outline: none;
+    box-shadow: 0 0 1px var(--black);
+    cursor: pointer;
+
+    &:focus {
+      border: solid 1px var(--black);
+    }
+
+    &:hover {
+      box-shadow: var(--box-shadow);
+      transition: 200ms;
+    }
+
+    span {
+      color: var(--dark-of-primary-bg);
+    }
+
+    img {
+      height: 30px;
+
+      svg {
+        fill: var(--dark-of-primary-bg);
+      }
+    }
+  }
+
+  @media (orientation: portrait) {
+    & {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}
+
+.text-field-wrapper {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  cursor: text;
+
+  div {
+    font-size: 10px;
+    margin-left: 5px;
+  }
+
+  input {
+    padding: 5px 10px;
+    background-color: rgba(0, 0, 0, 0.1);
+    outline: none;
+    border: solid 2px var(--white);
+    border-radius: 10px;
+    min-width: 250px;
+
+    &::placeholder {
+      color: var(--logo-bg);
+    }
+
+    &[disabled] {
+      color: var(--grey);
+      border-color: var(--grey);
+    }
+
+    &:focus {
+      border: solid 2px var(--black);
+    }
+  }
+}

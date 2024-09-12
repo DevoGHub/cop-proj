@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { ProfileView } from "../profileView";
 import { SearchComp } from "../searchComp";
 
 export const View = () => {
@@ -11,6 +12,7 @@ export const View = () => {
     return (
         <div>
             <SearchComp setPatient={setPatient} patientId={patientId} />
+            <ProfileView patient={patient} />
         </div>
     );
 }

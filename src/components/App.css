@@ -180,7 +180,7 @@ a {
   align-items: flex-end;
   justify-content: space-between;
   max-width: 700px;
-  margin: 0 auto;
+  margin: 0 auto 20px auto;
   gap: 10px;
 
   .search-container {
@@ -207,6 +207,12 @@ a {
       &:hover {
         border-color: var(--black);
         transition: 300ms;
+      }
+
+      &:disabled,
+      &:disabled:hover {
+        border-color: var(--grey);
+        transition: 0;
       }
     }
   }
@@ -253,6 +259,22 @@ a {
         fill: var(--dark-of-primary-bg);
       }
     }
+
+    &:disabled {
+      cursor: not-allowed;
+
+      span {
+        color: var(--grey);
+      }
+
+      img {
+        filter: grayscale(0.6);
+      }
+
+      &:hover {
+        box-shadow: 0 0 1px var(--black);
+      }
+    }
   }
 
   @media (orientation: portrait) {
@@ -292,6 +314,7 @@ a {
 
     &[type=number] {
       -moz-appearance: textfield;
+      appearance: textfield;
     }
 
     &::placeholder {
@@ -309,15 +332,14 @@ a {
   }
 }
 
-.profile-container {
-  .profile-wrapper {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-  }
+.profile-wrapper {
+  display: grid;
+  gap: 10px;
+  place-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
 
+.profile-container {
   .create-patient-wrapper {
     display: flex;
     flex-direction: row;
@@ -401,5 +423,20 @@ a {
         }
       }
     }
+  }
+}
+
+.no-profile-comp {
+  font-weight: 600;
+  font-size: 25px;
+  text-align: center;
+}
+
+.profile-view-wrapper {
+  span {
+    font-weight: 600;
+    font-size: 25px;
+    margin-bottom: 10px;
+    display: inline-block;
   }
 }

@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 import QRCode from "react-qr-code";
 import { useNavigate } from "react-router-dom";
 import { TextField } from "../textField";
@@ -9,7 +9,8 @@ export const ProfileComp = () => {
         age: "",
         sex: "",
         phone: "",
-        email: ""
+        email: "",
+        aadhaar: ""
     });
     const [id, setId] = useState("");
     const naviagte = useNavigate();
@@ -34,6 +35,11 @@ export const ProfileComp = () => {
         email
     });
 
+    const setAadhaar = (aadhaar) => setProfile({
+        ...profile,
+        aadhaar
+    })
+
     const createProfile = useCallback(() => {
         if (name !== "" &&
             profile.age !== "" &&
@@ -46,12 +52,6 @@ export const ProfileComp = () => {
         }
         else alert("Please fill all the details");
     }, [name, profile])
-
-    useEffect(() => {
-        if (id !== "") {
-            console.log(id);
-        }
-    }, [id])
 
     return (
         <div className="profile-container">
@@ -100,6 +100,15 @@ export const ProfileComp = () => {
                     disabled={id !== ""}
                     setValue={setEmail}
                 />
+                <TextField
+                    fieldId="aadhaar-profile"
+                    placeholder="Enter Patient Aadhaar"
+                    label="Aadhaar"
+                    type="number"
+                    value={profile.aadhaar}
+                    disabled={id !== ""}
+                    setValue={setAadhaar}
+                />
             </div>
             <div className="create-patient-wrapper">
                 <button type="button" onClick={createProfile} disabled={id !== ""}>Create New Patient</button>
@@ -110,7 +119,6 @@ export const ProfileComp = () => {
                     <div className="qr-wrapper">
                         <QRCode
                             value={id}
-                            style={{ width: "200px" }}
                             viewBox="0 0 200 200"
                             size="200"
                         />

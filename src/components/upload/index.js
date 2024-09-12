@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { ProfileView } from "../profileView";
 import { SearchComp } from "../searchComp";
 
 export const Upload = () => {
@@ -11,7 +12,7 @@ export const Upload = () => {
     return (
         <div>
             <SearchComp setPatient={setPatient} patientId={patientId} />
-            {/* <ProfileComp patient={patient} /> */}
+            <ProfileView patient={patient} />
         </div>
     );
 }

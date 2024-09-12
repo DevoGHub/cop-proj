@@ -1,4 +1,4 @@
-[
+const data = [
     {
         "id": "24PAT001",
         "name": "Anuradha Sharma",
@@ -286,3 +286,5 @@
         "records": []
     }
 ]
+
+export default data;

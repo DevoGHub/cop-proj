@@ -1,16 +1,25 @@
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import CameraIcon from '../../assets/images/camera_icon.svg';
 import SearchIcon from '../../assets/images/search_icon.svg';
+import data from "../../assets/json/data";
 import { TextField } from "../textField";
 
-export const SearchComp = ({ title }) => {
-    const [id, setId] = useState("");
+export const SearchComp = ({ setPatient, patientId = "" }) => {
+    const [id, setId] = useState(patientId);
+
+    const searchFunction = useCallback(() => {
+        setPatient(...data.filter(({ id: patientObjectId }) => patientObjectId.toLowerCase().trim() === id.toLowerCase().trim()))
+    }, [id])
+
+    useEffect(() => {
+        patientId !== "" && searchFunction();
+    }, [])
 
     return (
         <div className="search-wrapper">
             <div className="search-container">
-                <TextField label="Patient ID" placeholder="Enter Patient ID" fieldId="patientId" />
-                <button type="button" className="search-btn">
+                <TextField label="Patient ID" placeholder="Enter Patient ID" fieldId="patientId" value={id} setValue={setId} />
+                <button type="button" className="search-btn" onClick={searchFunction}>
                     <img src={SearchIcon} alt="search icon" />
                 </button>
             </div>

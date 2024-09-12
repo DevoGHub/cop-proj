@@ -1,3 +1,9 @@
-export const New = () => (
-    <div>New</div>
-)
+import { ProfileComp } from "../profileComp";
+
+export const New = () => {
+    return (
+        <div>
+            <ProfileComp />
+        </div>
+    );
+}

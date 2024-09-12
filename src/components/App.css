@@ -155,15 +155,16 @@ a {
         border-color: var(--logo-bg);
       }
 
-      &:hover {
-        transition: 300ms;
-        transform: scale(1.05);
+      &:hover.active {
+        cursor: default;
       }
 
       &:hover:not(.active) {
         background-color: var(--white);
         color: inherit;
         border-color: var(--primary-text);
+        transition: 300ms;
+        transform: scale(1.05);
       }
     }
   }
@@ -232,6 +233,8 @@ a {
 
     &:focus {
       border: solid 1px var(--black);
+      box-shadow: var(--box-shadow);
+      transition: 200ms;
     }
 
     &:hover {
@@ -280,6 +283,17 @@ a {
     border-radius: 10px;
     min-width: 250px;
 
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+
+    &[type=number] {
+      -moz-appearance: textfield;
+    }
+
     &::placeholder {
       color: var(--logo-bg);
     }
@@ -291,6 +305,101 @@ a {
 
     &:focus {
       border: solid 2px var(--black);
+    }
+  }
+}
+
+.profile-container {
+  .profile-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .create-patient-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 10px;
+
+    button {
+      padding: 5px 10px;
+      background-color: var(--white);
+      color: var(--dark-of-primary-bg);
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      outline: none;
+      box-shadow: 0 0 1px var(--black);
+      cursor: pointer;
+
+      &:focus {
+        border: solid 1px var(--black);
+        box-shadow: var(--box-shadow);
+        transition: 200ms;
+      }
+
+      &:disabled {
+        color: var(--grey);
+        cursor: not-allowed;
+      }
+
+      &:hover:not(:disabled) {
+        box-shadow: var(--box-shadow);
+        transition: 200ms;
+      }
+    }
+  }
+
+  .new-patient-details {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 10px;
+
+    .patient-fields {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      justify-content: center;
+      align-items: center;
+
+      button {
+        padding: 5px 10px;
+        background-color: var(--white);
+        color: var(--dark-of-primary-bg);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        outline: none;
+        box-shadow: 0 0 1px var(--black);
+        cursor: pointer;
+        width: fit-content;
+
+        &:focus {
+          border: solid 1px var(--black);
+          box-shadow: var(--box-shadow);
+          transition: 200ms;
+        }
+
+        &:disabled {
+          color: var(--grey);
+          cursor: not-allowed;
+        }
+
+        &:hover:not(:disabled) {
+          box-shadow: var(--box-shadow);
+          transition: 200ms;
+        }
+      }
     }
   }
 }

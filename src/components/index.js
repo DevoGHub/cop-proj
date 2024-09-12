@@ -16,7 +16,9 @@ export const App = () => (
         <Route element={<Home />} path="/" />
         <Route element={<New />} path="/new" />
         <Route element={<Upload />} path="/upload" />
+        <Route element={<Upload />} path="/upload/:patientId" />
         <Route element={<View />} path="/view" />
+        <Route element={<View />} path="/view/:patientId" />
         <Route element={<ErrorFallback />} path="/*" />
       </Routes>
     </div>

@@ -5,7 +5,7 @@ export const ProfileView = ({ patient }) => {
     if (!patient) {
         return (
             <div className="no-profile-comp">
-                No Profile Found. Search using Patient ID.
+                Profile Not Found. Search using Patient ID.
             </div>
         )
     }

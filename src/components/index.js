@@ -4,6 +4,7 @@ import { ErrorFallback } from './errorFallback';
 import { Header } from './header';
 import { Home } from './home';
 import { New } from './new';
+import { Record } from './record';
 import { Upload } from './upload';
 import { View } from './view';
 
@@ -19,6 +20,7 @@ export const App = () => (
         <Route element={<Upload />} path="/upload/:patientId" />
         <Route element={<View />} path="/view" />
         <Route element={<View />} path="/view/:patientId" />
+        <Route element={<Record />} path="/view/:patientId/:recordId" />
         <Route element={<ErrorFallback />} path="/*" />
       </Routes>
     </div>

@@ -487,3 +487,83 @@ a {
     place-items: center;
   }
 }
+
+.file-upload-wrapper {
+  cursor: pointer;
+  max-width: 250px;
+
+  div {
+    font-size: 10px;
+  }
+
+  .preview-img {
+    height: 100px;
+    max-width: 250px;
+    display: block;
+  }
+
+  &:hover .upload-div {
+    box-shadow: var(--box-shadow);
+    transition: 200ms;
+  }
+
+  .upload-div {
+    width: 250px;
+    padding: 5px 10px;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border: none;
+    outline: none;
+    box-shadow: 0 0 1px var(--black);
+    cursor: pointer;
+
+    span {
+      color: var(--dark-of-primary-bg);
+    }
+
+    .icon {
+      height: 30px;
+
+      svg {
+        fill: var(--dark-of-primary-bg);
+      }
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+
+      span {
+        color: var(--grey);
+      }
+
+      img {
+        filter: grayscale(0.6);
+      }
+
+      &:hover {
+        box-shadow: 0 0 1px var(--black);
+      }
+    }
+  }
+}
+
+.record-data-container {
+  margin-top: 30px;
+
+  span {
+    font-weight: 600;
+    font-size: 25px;
+    margin-bottom: 10px;
+    display: inline-block;
+  }
+
+  .record-data-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 10px;
+    place-items: center;
+  }
+}

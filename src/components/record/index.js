@@ -4,11 +4,9 @@ import data from "../../assets/json/data";
 import { ProfileView } from "../profileView";
 import { RecordDetails } from "../recordDetails";
 
-const sample = []
-
 export const Record = () => {
     let { patientId, recordId } = useParams();
-    const [patient, setPatient] = useState(...data.filter(({ id }) => id.toLowerCase() === patientId.toLowerCase()));
+    const [patient] = useState(...data.filter(({ id }) => id.toLowerCase() === patientId.toLowerCase()));
     const [record, setRecord] = useState()
 
     useEffect(() => {

@@ -456,13 +456,13 @@ a {
   gap: 15px;
   cursor: pointer;
 
-  & input,
-  & label {
+  &:not(.editable) input,
+  &:not(.editable) label {
     cursor: pointer;
   }
 
-  &:hover,
-  &:focus {
+  &:hover:not(.editable),
+  &:focus:not(.editable) {
     transform: scale(1.01);
     transition: 200ms;
     box-shadow: 0 0 10px var(--logo-bg);

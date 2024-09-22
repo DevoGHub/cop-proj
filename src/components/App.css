@@ -567,3 +567,44 @@ a {
     place-items: center;
   }
 }
+
+.home {
+  display: flex;
+  flex-direction: column;
+  padding: 0 40px;
+  gap: 20px;
+
+  font-family: 'Times New Roman';
+
+  div {
+    text-align: center;
+  }
+
+  .home-title {
+    font-weight: 800;
+    color: var(--dark-of-primary-bg);
+    font-size: 40px;
+  }
+
+  .home-subtitle {
+    font-weight: 600;
+    color: var(--logo-bg);
+    font-size: 30px;
+  }
+
+  .home-para {
+    font-weight: 500;
+    font-size: 25px;
+  }
+
+  .img-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    place-items: center;
+    gap: 25px;
+  }
+
+  img {
+    max-height: 300px;
+  }
+}

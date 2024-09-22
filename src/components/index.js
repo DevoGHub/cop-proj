@@ -14,14 +14,14 @@ export const App = () => (
 
     <div className="main-div">
       <Routes>
-        <Route element={<Home />} path="/" />
-        <Route element={<New />} path="/new" />
-        <Route element={<Upload />} path="/upload" />
-        <Route element={<Upload />} path="/upload/:patientId" />
-        <Route element={<View />} path="/view" />
-        <Route element={<View />} path="/view/:patientId" />
-        <Route element={<Record />} path="/view/:patientId/:recordId" />
-        <Route element={<ErrorFallback />} path="/*" />
+        <Route element={<Home />} path="/cop-proj/" />
+        <Route element={<New />} path="/cop-proj/new" />
+        <Route element={<Upload />} path="/cop-proj/upload" />
+        <Route element={<Upload />} path="/cop-proj/upload/:patientId" />
+        <Route element={<View />} path="/cop-proj/view" />
+        <Route element={<View />} path="/cop-proj/view/:patientId" />
+        <Route element={<Record />} path="/cop-proj/view/:patientId/:recordId" />
+        <Route element={<ErrorFallback />} path="/cop-proj/*" />
       </Routes>
     </div>
   </div>

@@ -14,16 +14,18 @@ code {
 }
 
 :root {
-  --white: #eee;
+  --bg-green: #13440f;
   --black: #111;
+  --white: #eee;
   --primary-text: var(--black);
   --inverted-text: var(--white);
-  --primary-bg: #7ec9f8;
+  --primary-bg: #ffdd00;
   --dark-of-primary-bg: #0f26a6;
-  --logo-bg: #6a1404;
+  --logo-bg: var(--white);
   --logo-fg: #fac51b;
-  --grey: #555;
+  --grey: #ccc;
   --box-shadow: 0 0 4px var(--black);
+  --home-text: #e2d199;
 }
 
 /*
@@ -33,7 +35,7 @@ code {
 *::before,
 *::after {
   box-sizing: border-box;
-  color: var(--primary-text);
+  color: var(--white);
   font-size: 16px;
 }
 
@@ -103,8 +105,7 @@ a {
 }
 
 .wrapper {
-  background-image: radial-gradient(var(--primary-bg), var(--white));
-  background-color: var(--primary-bg);
+  background-color: var(--bg-green);
   height: 100dvh;
   width: 100dvw;
   overflow-y: auto;
@@ -118,42 +119,44 @@ a {
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 5px 25px;
+  padding: 10px 20px;
   box-shadow: var(--box-shadow);
   justify-content: space-between;
 
   img {
-    height: 13dvh;
+    height: 12dvh;
     object-fit: contain;
     transition: 100ms;
 
     &:hover {
-      transition: 300ms;
-      transform: scale(1.1);
+      transition: 200ms;
+      transform: scale(1.05);
     }
   }
 
   .link-div {
     flex-wrap: wrap;
     display: flex;
-    gap: 10px;
+    gap: 15px;
 
     a {
       display: inline-block;
       width: fit-content;
-      padding: 5px 15px;
-      background-color: rgba(0, 0, 0, 0.1);
+      padding: 5px 20px;
+      background-color: var(--white);
       border-radius: 20px;
       align-items: center;
       text-transform: uppercase;
       border: solid 2px var(--primary-text);
       margin: 0 auto;
       transition: 100ms;
+      font-weight: 600;
+      color: var(--black);
 
       &.active {
-        color: var(--logo-bg);
-        background-color: var(--logo-fg);
-        border-color: var(--logo-bg);
+        color: var(--white);
+        background-color: var(--bg-green);
+        border-color: var(--black);
       }
 
       &:hover {
@@ -163,15 +166,15 @@ a {
 
       &:hover:not(.active) {
         background-color: var(--white);
-        color: inherit;
-        border-color: var(--primary-text);
+        color: var(--black);
+        border-color: var(--black);
       }
     }
   }
 }
 
 .main-div {
-  padding: 40px 30px;
+  padding: 35px 30px;
 }
 
 .search-wrapper {
@@ -446,7 +449,7 @@ a {
 
 .card-wrapper {
   background-color: var(--primary-bg);
-  background-image: radial-gradient(var(--white), var(--primary-bg));
+  background-image: radial-gradient(rgb(95, 130, 95), var(--bg-green));
   box-shadow: var(--box-shadow);
   padding: 30px;
   width: fit-content;
@@ -465,7 +468,7 @@ a {
   &:focus:not(.editable) {
     transform: scale(1.01);
     transition: 200ms;
-    box-shadow: 0 0 10px var(--logo-bg);
+    box-shadow: 0 0 8px var(--black);
     outline: none;
   }
 }
@@ -571,7 +574,7 @@ a {
 .home {
   display: flex;
   flex-direction: column;
-  padding: 0 40px;
+  padding: 0 20px;
   gap: 20px;
 
   font-family: 'Times New Roman';
@@ -582,19 +585,32 @@ a {
 
   .home-title {
     font-weight: 800;
-    color: var(--dark-of-primary-bg);
-    font-size: 40px;
+    color: var(--white);
+    font-size: 50px;
+    margin-bottom: -30px;
   }
 
   .home-subtitle {
-    font-weight: 600;
-    color: var(--logo-bg);
-    font-size: 30px;
+    font-weight: 500;
+    color: var(--white);
+    font-size: 28px;
+
+    & div {
+      color: inherit;
+      font-size: inherit;
+      font-weight: inherit;
+    }
   }
 
   .home-para {
     font-weight: 500;
     font-size: 25px;
+    color: var(--home-text);
+
+    & div {
+      font-size: inherit;
+      color: inherit;
+    }
   }
 
   .img-2 {
@@ -605,6 +621,6 @@ a {
   }
 
   img {
-    max-height: 300px;
+    max-height: 275px;
   }
 }

@@ -1,21 +1,20 @@
 {
   "files": {
-    "main.css": "/cop-proj/static/css/main.ac045f6a.css",
-    "main.js": "/cop-proj/static/js/main.7046bfb1.js",
-    "static/media/home-img-3.png": "/cop-proj/static/media/home-img-3.4e5ee3a60e67f356cb1a.png",
-    "static/media/home-img-4.png": "/cop-proj/static/media/home-img-4.2cb5cc9dcb69f5cd0f67.png",
-    "static/media/logo.png": "/cop-proj/static/media/logo.d326a9cf8ae8fd14b7b8.png",
-    "static/media/home-img-2.jpg": "/cop-proj/static/media/home-img-2.d8f5cca31bb9f1c4cfbc.jpg",
-    "static/media/home-img-1.jpg": "/cop-proj/static/media/home-img-1.cae4350068a5587841df.jpg",
-    "static/media/search_icon.svg": "/cop-proj/static/media/search_icon.d0e7b7b07d6450445eae9d7c70b659c7.svg",
+    "main.css": "/cop-proj/static/css/main.83f281e7.css",
+    "main.js": "/cop-proj/static/js/main.5d292299.js",
+    "static/media/connectivity.webp": "/cop-proj/static/media/connectivity.1893a02ff10695a295e3.webp",
+    "static/media/digital_storage.webp": "/cop-proj/static/media/digital_storage.5bfa891ea90badc372fa.webp",
+    "static/media/logo.jpg": "/cop-proj/static/media/logo.9c883f31c646286c7a34.jpg",
+    "static/media/logo.png": "/cop-proj/static/media/logo.cf4ffa2b7f0ed3e10ee6.png",
+    "static/media/search_icon.svg": "/cop-proj/static/media/search_icon.94c28c5a004a77781101416e45069f5c.svg",
     "static/media/camera_icon.svg": "/cop-proj/static/media/camera_icon.3c77d7f440fb4822566ebea48d822a0e.svg",
     "static/media/upload_icon.svg": "/cop-proj/static/media/upload_icon.b305d941f1768122dac13700278046c5.svg",
     "index.html": "/cop-proj/index.html",
-    "main.ac045f6a.css.map": "/cop-proj/static/css/main.ac045f6a.css.map",
-    "main.7046bfb1.js.map": "/cop-proj/static/js/main.7046bfb1.js.map"
+    "main.83f281e7.css.map": "/cop-proj/static/css/main.83f281e7.css.map",
+    "main.5d292299.js.map": "/cop-proj/static/js/main.5d292299.js.map"
   },
   "entrypoints": [
-    "static/css/main.ac045f6a.css",
-    "static/js/main.7046bfb1.js"
+    "static/css/main.83f281e7.css",
+    "static/js/main.5d292299.js"
   ]
 }
